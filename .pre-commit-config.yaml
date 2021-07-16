@@ -19,7 +19,7 @@ repos:
         types: [python]
       - id: mypy
         name: mypy
-        entry: poetry run mypy
+        entry: poetry run mypy yelpfusion
         language: system
         # run on all files
         pass_filenames: false
