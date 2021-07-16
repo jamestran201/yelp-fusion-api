@@ -6,6 +6,7 @@ authors = ["James Tran <tran.james2001@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
+requests = ">=2.26.0,<3.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "0.910"
@@ -16,6 +17,7 @@ flake8-annotations = "2.6.2"
 flake8-colors = "0.1.9"
 pre-commit = "2.13.0"
 pytest = "6.2.4"
+requests-mock = "^1.9.3"
 
 [tool.black]
 line-length = 120
