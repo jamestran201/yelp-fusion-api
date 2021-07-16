@@ -3,7 +3,7 @@ from typing import Optional
 
 
 @dataclass
-class SearchParam:
+class SearchParamValidator:
     term: Optional[str] = None
     location: Optional[str] = None
     latitude: Optional[float] = None
@@ -25,9 +25,7 @@ class SearchParam:
 
     def _validate_location_lat_long_presence(self) -> None:
         if not self.location and (not self.latitude or not self.longitude):
-            raise ValueError(
-                "location must be provided. Otherwise, both latitude and longitude must be provided."
-            )
+            raise ValueError("location must be provided. Otherwise, both latitude and longitude must be provided.")
 
     def _validate_open_now_and_open_at(self) -> None:
         if self.open_now and self.open_at is not None:

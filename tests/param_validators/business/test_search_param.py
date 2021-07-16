@@ -1,6 +1,6 @@
 import pytest
 
-from yelpfusion.param_dataclasses.business.search_param import SearchParam
+from yelpfusion.param_validators.business.search_param import SearchParamValidator
 
 
 @pytest.mark.parametrize(
@@ -11,7 +11,7 @@ from yelpfusion.param_dataclasses.business.search_param import SearchParam
     ],
 )
 def test_valid_location_latitude_longitude(location, latitude, longitude):
-    param = SearchParam(location=location, latitude=latitude, longitude=longitude)
+    param = SearchParamValidator(location=location, latitude=latitude, longitude=longitude)
 
     assert param.location == location
     assert param.latitude == latitude
@@ -20,22 +20,16 @@ def test_valid_location_latitude_longitude(location, latitude, longitude):
 
 def test_missing_location_and_latitude():
     with pytest.raises(ValueError) as e:
-        SearchParam(longitude=123.0)
+        SearchParamValidator(longitude=123.0)
 
-    assert (
-        str(e.value)
-        == "location must be provided. Otherwise, both latitude and longitude must be provided."
-    )
+    assert str(e.value) == "location must be provided. Otherwise, both latitude and longitude must be provided."
 
 
 def test_missing_location_and_longitude():
     with pytest.raises(ValueError) as e:
-        SearchParam(latitude=123.0)
+        SearchParamValidator(latitude=123.0)
 
-    assert (
-        str(e.value)
-        == "location must be provided. Otherwise, both latitude and longitude must be provided."
-    )
+    assert str(e.value) == "location must be provided. Otherwise, both latitude and longitude must be provided."
 
 
 @pytest.mark.parametrize(
@@ -46,7 +40,7 @@ def test_missing_location_and_longitude():
     ],
 )
 def test_valid_open_now_and_open_at(open_now, open_at):
-    param = SearchParam(location="Vancouver", open_now=open_now, open_at=open_at)
+    param = SearchParamValidator(location="Vancouver", open_now=open_now, open_at=open_at)
 
     assert param.open_now == open_now
     assert param.open_at == open_at
@@ -54,6 +48,6 @@ def test_valid_open_now_and_open_at(open_now, open_at):
 
 def test_invalid_open_now_and_open_at():
     with pytest.raises(ValueError) as e:
-        SearchParam(location="Vancouver", open_now=True, open_at=1995)
+        SearchParamValidator(location="Vancouver", open_now=True, open_at=1995)
 
     assert str(e.value) == "open_at and open_now cannot be used together."
