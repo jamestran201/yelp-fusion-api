@@ -26,7 +26,7 @@ repos:
         types: [python]
       - id: test
         name: test
-        entry: poetry run test
+        entry: poetry run pytest
         language: system
         # run on all files
         pass_filenames: false
