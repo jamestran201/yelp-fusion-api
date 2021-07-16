@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "yelpfusion"
+version = "0.1.0"
+description = ""
+authors = ["James Tran <tran.james2001@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.6.2,<4.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "0.910"
+black = "21.6b0"
+isort = "5.9.2"
+flake8 = "3.9.2"
+flake8-annotations = "2.6.2"
+flake8-colors = "0.1.9"
+pre-commit = "2.13.0"
+pytest = "6.2.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
