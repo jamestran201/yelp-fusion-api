@@ -6,6 +6,7 @@ authors = ["James Tran <tran.james2001@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
+requests = ">=2.26.0,<3.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "0.910"
