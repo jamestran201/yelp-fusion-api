@@ -40,3 +40,11 @@ def test_business_matches(requests_mock, businesses_endpoint):
     )
 
     assert mock_api.called is True
+
+
+def test_business_reviews(requests_mock, businesses_endpoint):
+    mock_api = requests_mock.get("https://api.yelp.com/v3/businesses/fakebusiness/reviews", json={})
+
+    businesses_endpoint.reviews("fakebusiness", locale="en_US")
+
+    assert mock_api.called is True

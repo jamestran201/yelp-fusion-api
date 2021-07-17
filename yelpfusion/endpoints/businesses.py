@@ -29,3 +29,10 @@ class Businesses(Endpoint):
         MatchParamValidator(**params)
 
         return self._get_request("/businesses/matches", params=params)
+
+    def reviews(self, business_id: str, locale: Optional[str] = None) -> Dict[str, Any]:
+        params = {}
+        if locale:
+            params["locale"] = locale
+
+        return self._get_request(f"/businesses/{business_id}/reviews", params=params)
