@@ -29,5 +29,15 @@ class Businesses:
 
         return response.json()
 
+    def details(self, business_id: str, locale: Optional[str] = None) -> Dict[str, Any]:
+        params = {}
+        if locale:
+            params["locale"] = locale
+
+        response = requests.get(f"{BASE_URL}/businesses/{business_id}", params=params, headers=self._request_header())
+        response.raise_for_status()
+
+        return response.json()
+
     def _request_header(self) -> Dict[str, str]:
         return {"Authorization": f"Bearer {self.api_key}"}
