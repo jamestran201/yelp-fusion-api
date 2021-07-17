@@ -8,7 +8,7 @@ class MatchParamValidator:
     city: str
     state: str
     country: str
-    address: str
+    address1: str
     address2: Optional[str] = None
     address3: Optional[str] = None
     latitude: Optional[float] = None
