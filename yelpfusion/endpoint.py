@@ -9,7 +9,7 @@ class Endpoint:
     def __init__(self, api_key: str):
         self.api_key = api_key
 
-    def _get_request(self, path: str, params: Dict[str, Any]) -> Dict[str, Any]:
+    def _get(self, path: str, params: Dict[str, Any]) -> Dict[str, Any]:
         response = requests.get(f"{BASE_URL}{path}", params=params, headers=self._request_header())
         response.raise_for_status()
 
