@@ -16,3 +16,6 @@ class Events(Endpoint):
         SearchParamValidator(**params)
 
         return self._get("/events", params=params)
+
+    def featured(self, **params: Any) -> Dict[str, Any]:
+        return self._get("/events/featured", params=params)

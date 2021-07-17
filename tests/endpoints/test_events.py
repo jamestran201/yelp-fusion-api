@@ -15,3 +15,11 @@ def test_events_search(requests_mock):
     Events("test-key").search(is_free=True)
 
     assert mock_api.called is True
+
+
+def test_events_featured(requests_mock):
+    mock_api = requests_mock.get("https://api.yelp.com/v3/events/featured", json={})
+
+    Events("test-key").featured(location="Scarborough")
+
+    assert mock_api.called is True
