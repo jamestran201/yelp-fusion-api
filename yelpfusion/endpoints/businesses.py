@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import requests
 
@@ -15,6 +15,16 @@ class Businesses:
         SearchParamValidator(**params)
 
         response = requests.get(f"{BASE_URL}/businesses/search", params=params, headers=self._request_header())
+        response.raise_for_status()
+
+        return response.json()
+
+    def search_by_phone_number(self, phone: str, locale: Optional[str] = None) -> Dict[str, Any]:
+        params = {"phone": phone}
+        if locale:
+            params["locale"] = locale
+
+        response = requests.get(f"{BASE_URL}/businesses/search/phone", params=params, headers=self._request_header())
         response.raise_for_status()
 
         return response.json()
