@@ -1,8 +1,17 @@
 [tool.poetry]
 name = "yelpfusion"
 version = "0.1.0"
-description = ""
+description = "A Python wrapper for Yelp Fusion API"
 authors = ["James Tran <tran.james2001@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["yelp", "fusion"]
+packages = [
+    { include = "yelpfusion" }
+]
+
+[tool.poetry.urls]
+"Yelp API documentation" = "https://www.yelp.com/developers/documentation/v3/get_started"
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
