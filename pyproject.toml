@@ -5,7 +5,7 @@ description = "A Python wrapper for Yelp Fusion API"
 authors = ["James Tran <tran.james2001@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-keywords = ["yelp", "fusion"]
+keywords = ["yelp"]
 packages = [
     { include = "yelpfusion" }
 ]
