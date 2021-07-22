@@ -12,4 +12,4 @@ lint:
 	poetry run flake8
 
 mypy:
-	poetry run mypy yelpfusion
+	poetry run mypy --install-types yelpfusion
