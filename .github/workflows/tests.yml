@@ -1,6 +1,9 @@
 name: Run lint and tests
 
-on: [push]
+on:
+  push:
+    tags-ignore:
+      - '*'
 
 jobs:
   lint:
