@@ -25,3 +25,26 @@ The available endpoints are:
 - Categories: [api.categories](https://github.com/tmnhat2001/yelp-fusion-api/blob/main/yelpfusion/endpoints/categories.py)
 - Events: [api.events](https://github.com/tmnhat2001/yelp-fusion-api/blob/main/yelpfusion/endpoints/events.py)
 - Transactions: [api.transactions](https://github.com/tmnhat2001/yelp-fusion-api/blob/main/yelpfusion/endpoints/transactions.py)
+
+## Development
+
+### Requirements
+
+- make
+- poetry
+
+### Installing dependencies
+
+`make install`
+
+This will:
+- Install the dev dependencies
+- Set up git hooks to run tests and linting on push
+
+### Running tests
+
+`poetry run pytest`
+
+### Bumping version
+
+`poetry version <major|minor|patch>`
