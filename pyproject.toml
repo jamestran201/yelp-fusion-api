@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "yelpfusion"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python wrapper for Yelp Fusion API"
 authors = ["James Tran <tran.james2001@gmail.com>"]
 readme = "README.md"
